@@ -70,7 +70,7 @@ export default function ProductList() {
           gap='20px'
           alignItems='stretch'
         >
-          {(item, index) => <ProductCard product={item} key={item.id} />}
+          {(item) => <ProductCard product={item} key={item.id} />}
         </Collection>
       </div>
     </section>

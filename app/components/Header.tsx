@@ -6,7 +6,7 @@ export default function Header() {
       <nav className='container mx-auto px-6 py-4 flex justify-between items-center'>
         {/* Logo */}
         <div className='text-2xl font-bold text-gray-800'>
-          <Link href='/'>Valentina's</Link>
+          <Link href='/'>Valentina&apos;s</Link>
         </div>
 
         {/* Menu Links */}
