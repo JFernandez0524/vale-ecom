@@ -15,6 +15,17 @@ const schema = a.schema({
       name: a.string().required(), // The product name, e.g., "Lavender Scrub"
       price: a.float().required(), // The price, e.g., 10.50
       stock: a.integer().required(), // How many are in stock, e.g., 25
+      // --- ADD THESE NEW FIELDS ---
+      description: a.string(), // A short description
+      image: a.url(), // A URL to the product image
+      avgRating: a.float(), // Average rating (e.g., 4.5)
+      bestSeller: a.boolean(), // Is it a best seller?
+      isNew: a.boolean(), // Is it a new product?
+      // --- END NEW FIELDS ---
+      // This defines the "owner" of the product, which is the user ID
+      owner: a
+        .string()
+        .authorization((allow) => [allow.owner().to(['read', 'delete'])]),
     })
     // This sets the authorization rules
     .authorization((allow) => [
