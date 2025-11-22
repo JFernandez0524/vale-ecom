@@ -31,7 +31,7 @@ const schema = a.schema({
     .authorization((allow) => [
       // For a showcase page, we want *everyone* (public) to be able to *read* the products
       allow.publicApiKey().to(['read']),
-      allow.owner(),
+      allow.owner().to(['read', 'create', 'update', 'delete']),
       // Only authenticated users can *create*, *update*, and *delete* products
     ]),
 });
@@ -43,7 +43,7 @@ export const data = defineData({
   schema,
   authorizationModes: {
     // We set the default authorization mode to API Key for simple public access
-    defaultAuthorizationMode: 'userPool',
+    defaultAuthorizationMode: 'apiKey',
     // You'll need to add an API Key expiration date or it will default to 7 days
     apiKeyAuthorizationMode: {
       expiresInDays: 30, // Let's set this key to be valid for 30 days

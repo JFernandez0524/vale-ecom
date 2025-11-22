@@ -7,7 +7,6 @@ import About from '@/app/components/About';
 import Footer from '@/app/components/Footer';
 import { AuthGetCurrentUserServer } from '@/utils/amplify-utils';
 import { getStorageFileLinkServerSide } from '@/utils/amplify-utils';
-import AwsImage from './components/AwsImage';
 
 export default async function Home() {
   const currentUser = await AuthGetCurrentUserServer();
