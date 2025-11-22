@@ -25,17 +25,23 @@ export const auth = defineAuth({
     birthdate: {
       mutable: true,
       required: false,
+      // @ts-ignore
+      dataType: 'string',
     },
 
     // Maps to Cognito standard attribute 'phone_number'
     phoneNumber: {
       mutable: true,
       required: false,
+      // @ts-ignore
+      dataType: 'string',
     },
     // Maps to Cognito standard attribute 'picture'
     profilePicture: {
       mutable: true,
       required: false,
+      // @ts-ignore
+      dataType: 'string',
     },
   },
 });
