@@ -1,13 +1,24 @@
 // This is your main homepage file: app/page.tsx
 
-// Import all the components we just created
 import Header from '@/app/components/Header';
 import Hero from '@/app/components/Hero';
 import ProductList from '@/app/components/ProductList'; // Our updated list
 import About from '@/app/components/About';
 import Footer from '@/app/components/Footer';
+import { AuthGetCurrentUserServer } from '@/utils/amplify-utils';
+import { getStorageFileLinkServerSide } from '@/utils/amplify-utils';
+import AwsImage from './components/AwsImage';
 
-export default function Home() {
+export default async function Home() {
+  const currentUser = await AuthGetCurrentUserServer();
+
+  if (!currentUser) {
+    console.log(currentUser);
+  }
+
+  const storageFileLink = await getStorageFileLinkServerSide();
+  console.log({ storageFileLink });
+
   return (
     <div className='flex flex-col min-h-screen'>
       {/* The Header component is outside of the 'main' tag 

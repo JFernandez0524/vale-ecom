@@ -6,6 +6,12 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} Made by Valentina. All rights
           reserved.
         </p>
+        <p>
+          site created by &copy;
+          <a href='https://JoseTheRealtor.com' target='_blank'>
+            JoseTheRealtor
+          </a>
+        </p>
       </div>
     </footer>
   );

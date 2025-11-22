@@ -1,6 +1,17 @@
+'use client';
+
 import Link from 'next/link';
+import { useAuth } from '@/contexts/AuthContext';
 
 export default function Header() {
+  const { user, route, authStatus } = useAuth();
+  console.log({
+    user,
+    route,
+    authStatus,
+  });
+
+  console.log({ user, route, authStatus });
   return (
     <header className='bg-white shadow-md sticky top-0 z-50'>
       <nav className='container mx-auto px-6 py-4 flex justify-between items-center'>

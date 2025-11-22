@@ -43,7 +43,7 @@ export const data = defineData({
   schema,
   authorizationModes: {
     // We set the default authorization mode to API Key for simple public access
-    defaultAuthorizationMode: 'apiKey',
+    defaultAuthorizationMode: 'userPool',
     // You'll need to add an API Key expiration date or it will default to 7 days
     apiKeyAuthorizationMode: {
       expiresInDays: 30, // Let's set this key to be valid for 30 days

@@ -26,7 +26,9 @@ export default function ProductList() {
   async function fetchProducts() {
     setLoading(true);
     try {
-      const { data: items } = await client.models.Product.list();
+      const { data: items } = await client.models.Product.list({
+        authMode: 'userPool',
+      });
       setProducts(items);
     } catch (e) {
       console.error('An error occurred:', e);

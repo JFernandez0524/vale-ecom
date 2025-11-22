@@ -24,6 +24,7 @@ export async function middleware(request: NextRequest) {
   if (authenticated) {
     return response;
   }
+  console.log('No User Detected');
 
   return NextResponse.redirect(new URL('/login', request.url));
 }
@@ -38,6 +39,8 @@ export const config = {
      * - favicon.ico (favicon file)
      * - login
      */
-    '/((?!api|_next/static|_next/image|favicon.ico|login).*)',
+    // '/((?!api|_next/static|_next/image|favicon.ico|login).*)',
+    '/api/:path*',
+    '/protected/:path*',
   ],
 };
